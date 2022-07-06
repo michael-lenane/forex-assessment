@@ -8,6 +8,9 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = "secret"
 debug = DebugToolbarExtension(app)
 
+currency_codes = CurrencyCodes()
+currency_rates = CurrencyRates()
+
 
 @app.route("/test")
 def show_test_page():
