@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+
+    </nav>
+
+
+    <form action="">
+        <label for="convert-from">Convert From:
+            <input list="start" name="start" placeholder="Choose a Currency">
+            <datalist id="start" name="start">
+                {% for currency in currencies %}
+                    <option value="{{ currency }}"></option>
+                {% endfor %}
+            </datalist>
+        </label>
+
+
+        <label for="convert-to">Convert To:
+            <input list="convert-to" name="convert-to" placeholder="Choose a Currency">
+            <datalist id="convert-to" name="convert-to">
+                {% for currency in currencies %}
+                    <option value="{{ currency }}"></option>
+                {% endfor %}
+            </datalist>
+        </label>
+
+        <label for="amount">Amount:
+            <input type="number" required placeholder="{{ currency_codes.get_symbol(currency_value) }}">
+        </label>
+
+        <button>Convert</button>
+
+    </form>
+    
+</body>
+</html>
