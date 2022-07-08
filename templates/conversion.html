@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+
+{% block conversion %}
+    <p>{{currency_rates.convert(convert_start, convert_end, amount)}}</p>
+{% endblock %}
