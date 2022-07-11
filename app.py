@@ -3,6 +3,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 from forex_python.converter import CurrencyCodes
 from forex_python.converter import CurrencyRates
 from forex_python.converter import Decimal
+import html
 
 
 app = Flask(__name__)
@@ -34,7 +35,4 @@ def show_conversion_page():
     convert_amount = request.form["amount"]
     amount = Decimal(convert_amount)
 
-    end_amount = round(currency_rates.convert(
-        convert_start, convert_end, amount))
-
-    return render_template("conversion.html", currencies=currencies, currency_codes=currency_codes, convert_start=convert_start, convert_end=convert_end, amount=amount, currency_rates=currency_rates, end_amount=end_amount)
+    return render_template("conversion.html", currencies=currencies, currency_codes=currency_codes, convert_start=convert_start, convert_end=convert_end, amount=amount, currency_rates=currency_rates, end_symbol=end_symbol)
