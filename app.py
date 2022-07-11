@@ -35,4 +35,4 @@ def show_conversion_page():
     convert_amount = request.form["amount"]
     amount = Decimal(convert_amount)
 
-    return render_template("conversion.html", currencies=currencies, currency_codes=currency_codes, convert_start=convert_start, convert_end=convert_end, amount=amount, currency_rates=currency_rates, end_symbol=end_symbol)
+    return render_template("conversion.html", currencies=currencies, currency_codes=currency_codes, convert_start=convert_start, convert_end=convert_end, amount=amount, currency_rates=currency_rates)
