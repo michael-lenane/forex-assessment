@@ -10,37 +10,39 @@
 <body>
 
     <nav>
-
+        
     </nav>
 
     <div class="conversion">
         <form method="POST">
-            <label for="convert-from">
-                <input type="text" name="start" list="start" required>
-                <datalist id="start">
+            <label for="start-choice">From
+                <input type="text" id="start-choice" name="start-choice" list="start" required>
+            </label>
+            <datalist id="start">
                 {% for currency in currencies %}
                     <option value="{{currency}}"></option>
                 {% endfor %}
-                </datalist>
-                
-            </label>
+            </datalist>
     
-            <label for="convert-to">
-                <input type="text" name="end" list="end" required>
-                <datalist id="end">
-                    {% for currency in currencies %}
-                        <option value="{{currency}}"></option>
-                    {% endfor %}
-                </datalist>
+            <label for="end-choice">To
+                <input type="text" id="end-choice" name="end-choice" list="end" required>
             </label>
+            <datalist id="end">
+                {% for currency in currencies %}
+                    <option value="{{currency}}"></option>
+                {% endfor %}
+            </datalist>
     
-            <label for="amount">
-                <input type="number" min="0" step="0.01" name="amount" required>
+            <label for="amount">Amount
+                <input id="amount" type="number" min="0" step="0.01" name="amount" required>
             </label>
-    
-            <button>Convert</button>
+
+            <div class="button-container">
+                <button class="button">Convert</button>
+            </div>
     
         </form>
+        
     </div>
     
 
