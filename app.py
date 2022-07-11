@@ -11,7 +11,7 @@ app.config['SECRET_KEY'] = "secret"
 debug = DebugToolbarExtension(app)
 
 
-@app.route("/convert")
+@app.route("/", methods=["POST", "GET"])
 def show_test_page():
 
     currencies = ["EUR", "IDR", "BGN", "ILS", "GBP", "DKK", "CAD", "JPY", "HUF", "RON", "MYR", "SEK", "SGD", "HKD", "AUD",
@@ -22,7 +22,7 @@ def show_test_page():
     return render_template("base.html", currencies=currencies, currency_codes=currency_codes)
 
 
-@app.route("/convert", methods=["POST"])
+@app.route("/convert", methods=["POST", "GET"])
 def show_conversion_page():
 
     currencies = ["EUR", "IDR", "BGN", "ILS", "GBP", "DKK", "CAD", "JPY", "HUF", "RON", "MYR", "SEK", "SGD", "HKD", "AUD",
@@ -30,8 +30,8 @@ def show_conversion_page():
 
     currency_codes = CurrencyCodes()
     currency_rates = CurrencyRates()
-    convert_start = request.form["start"]
-    convert_end = request.form["end"]
+    convert_start = request.form["start-choice"]
+    convert_end = request.form["end-choice"]
     convert_amount = request.form["amount"]
     amount = Decimal(convert_amount)
 
