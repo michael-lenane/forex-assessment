@@ -10,9 +10,13 @@
 <body>
 
     <nav>
-
+        <h3>&yen; ForEx Converter</h3>
+        <a class="home" href="/">Home</a>
     </nav>
 
+    <section class="filler-space">
+
+    </section>
     <div class="conversion">
         <form method="POST" action="/convert">
             <div class="labels">
@@ -41,14 +45,23 @@
             
 
             <div class="button-container">
-                <p> </p>
                 {% block conversion %}{% endblock %}
+                <p>&yen;ForEx Converter uses the forex_python API. Click <a href=""></a> here for API details.</p>
                 <button class="button">Convert</button>
             </div>
     
-        </form>
-        
+        </form>       
     </div>
+    
+    
+
+    <section>
+        {% block content %}
+        {% endblock %}
+
+        {% block morecontent %}
+        {% endblock %}
+    </section>
     
 
 

@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
 {% block conversion %}
-    <p>{{end_symbol}}{{currency_rates.convert(convert_start, convert_end, amount) | round(2)}}</p>
+    <p>{{currency_rates.convert(convert_start, convert_end, amount) | round(2)}}</p>
+{% endblock %}
+
+
+{% block content %}
+    <p>I have some content in mah belly</p>
+{% endblock %}
+
+
+{% block morecontent %}
+    <p>I ALSO have some content in mah belly</p>
 {% endblock %}
