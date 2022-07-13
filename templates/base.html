@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/34e08155c6.js" crossorigin="anonymous"></script>
     <title>{% block title %}{% endblock %}</title>
 </head>
@@ -50,8 +53,11 @@
             
 
             <div class="button-container">
-                {% block conversion %}{% endblock %}
-                <p>&yen;ForEx Converter uses the forex_python API. Click <a href=""></a> here for API details.</p>
+                <div class="result">
+                    {% block conversion %}
+                    {% endblock %}
+                </div>
+                
                 <button class="button">Convert</button>
             </div>
     

@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 
 {% block conversion %}
-    <p>{{currency_rates.convert(convert_start, convert_end, amount) | round(2)}}</p>
+    <p class="conversion-result"><u>Result:</u> {{amount}} {{convert_start}} = {{currency_rates.convert(convert_start, convert_end, amount) | round(2)}} {{convert_end}}</p>
 {% endblock %}
 
 
 {% block content %}
-    <p>I have some content in mah belly</p>
-{% endblock %}
-
-
-{% block morecontent %}
-    <p>I ALSO have some content in mah belly</p>
+    <div class="common-info">
+        <div class="common-currencies">
+            <h3>Common Currencies</h3>
+            <ul>
+            {% for item in common_currencies %}
+                <li>{{item}}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
 {% endblock %}

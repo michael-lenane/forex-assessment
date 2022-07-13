@@ -20,13 +20,11 @@ def show_test_page():
     common_currencies = ["AUD", "CAD", "CNY", "EUR",
                          "GBP", "INR", "JPY", "MXN"]
 
-    flags = ["class='flag flag-australia'"]
-
     currency_codes = CurrencyCodes()
     currency_rates = CurrencyRates()
     amount = Decimal(1.00)
 
-    return render_template("base.html", currencies=currencies, currency_codes=currency_codes, common_currencies=common_currencies, currency_rates=currency_rates, amount=amount, flags=flags)
+    return render_template("base.html", currencies=currencies, currency_codes=currency_codes, common_currencies=common_currencies, currency_rates=currency_rates, amount=amount)
 
 
 @app.route("/convert", methods=["POST", "GET"])
