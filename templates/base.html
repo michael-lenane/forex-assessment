@@ -5,13 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/34e08155c6.js" crossorigin="anonymous"></script>
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 
     <nav>
-        <h3>&yen; ForEx Converter</h3>
-        <a class="home" href="/">Home</a>
+        <h1><i class="fa-solid fa-coins"></i> ForEx Converter</h1>
+        <a class="home" href="/"><i class="fa-solid fa-building-columns"></i> Home
+        </a>
     </nav>
 
     <section class="filler-space">
@@ -56,6 +61,19 @@
     
 
     <section>
+        <div class="common-info">
+            <div class="common-currencies">
+                <h3>&nbsp;&nbsp;Common Conversions</h3>
+                <ul>
+                {% for item in common_currencies %}
+                    <li>1 USD &nbsp; &nbsp; &nbsp; &nbsp; = &nbsp; &nbsp; &nbsp; &nbsp; {{currency_rates.convert('USD', item, amount) | round(2)}}&nbsp;{{item}}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% for flag in flags%}
+                <i {{flag}}></i>
+            {% endfor %}
+        </div>
         {% block content %}
         {% endblock %}
 
@@ -66,6 +84,7 @@
 
 
     
-    <script src="https://kit.fontawesome.com/34e08155c6.js" crossorigin="anonymous"></script>
+    
+    
 </body>
 </html>

@@ -42,12 +42,14 @@ input {
 }
 
 button {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 24px;
     align-self: flex-end;
     background-color:blue;
     border: none;
     border-radius: .4rem;
     color: white;
-    padding: .8rem;
+    padding: 1rem;
     transition: background-color .2s, box-shadow .2s;
     margin-right: 10px;
 }
@@ -66,7 +68,10 @@ button:hover {
 }
 
 label {
+    font-family: 'Roboto Condensed', sans-serif;
     display: block;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 nav {
@@ -78,12 +83,43 @@ nav {
     background-image: linear-gradient(to right, rgb(7, 11, 120), rgb(68, 67, 139), rgb(152, 152, 168));
 }
 
-h3 {
+h1 {
     margin-left: 8px;
+    font-size: 28px;
+}
+
+a {
+    font-size: 20px;
 }
 
 .home {
     text-decoration: none;
     color: white;
     margin-left: 70%;
+}
+
+.common-info {
+    display: flex;
+    margin-top: 100px;
+    border: 1px solid black;
+}
+
+.common-currencies {
+    margin: auto;
+    border-radius: .4rem;
+    box-shadow: rgba(35, 55, 80, 0.3) 0px 6px 12px 0px;
+    padding: 25px;
+}
+
+ul {
+    list-style: none;
+    padding-left: none;
+    padding-inline-start: 0px;
+    margin: auto;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
 }
